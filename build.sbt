@@ -2,7 +2,6 @@ import Dependencies._
 import sbt.Keys._
 import sbt.{IO, _}
 
-import scala.Console.println
 
 ThisBuild / version := "0.1.0-SNAPSHOT"
 
@@ -28,9 +27,7 @@ lazy val root = (project in file("."))
 
 (Compile / scalikejdbcJDBCSettings) := {
   val props = new java.util.Properties()
-  IO.load(props, file("scalikejdbc.properties"))
-  println(props.entrySet())
-
+  IO.load(props, file("project/scalikejdbc.properties"))
   def loadProp(key: String): String = Option(props.get(key))
     .map(_.toString)
     .getOrElse(throw new IllegalStateException("missing key " + key))
