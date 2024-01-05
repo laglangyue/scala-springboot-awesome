@@ -1,0 +1,1 @@
+As described, this is an exploratory project to study the use of tools such as Scalike and Pekko in Spring
