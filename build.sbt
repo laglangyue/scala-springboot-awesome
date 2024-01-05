@@ -28,7 +28,7 @@ lazy val root = (project in file("."))
 
 (Compile / scalikejdbcJDBCSettings) := {
   val props = new java.util.Properties()
-  IO.load(props, file("project/scalikejdbc.properties"))
+  IO.load(props, file("scalikejdbc.properties"))
   println(props.entrySet())
 
   def loadProp(key: String): String = Option(props.get(key))
