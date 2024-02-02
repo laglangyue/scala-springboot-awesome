@@ -30,8 +30,16 @@ public class AdminController {
     return users;
   }
 
+
   @PostMapping("/hello")
   public String admin(@RequestBody AddUser addUser) {
     return adminService.add(addUser).toString();
+  }
+
+  @GetMapping("/admin")
+  public Response<List<MockUser>> hello() {
+    ArrayList<MockUser> objects = new ArrayList<>();
+    objects.add(MockUser.apply("1"));
+    return new Response<>(objects);
   }
 }

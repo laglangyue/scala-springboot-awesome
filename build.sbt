@@ -12,7 +12,7 @@ lazy val root = (project in file("."))
     name := "scala-springboot-awesome",
     libraryDependencies += "org.springframework.boot" % "spring-boot" % SpringBoot,
     libraryDependencies += "org.springframework.boot" % "spring-boot-starter-web" % SpringBoot,
-    libraryDependencies += "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.16.1",
+    libraryDependencies += "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.13.3",
     libraryDependencies ++= Seq(
       "org.scalikejdbc" %% "scalikejdbc" % "4.1.0",
       "com.zaxxer" % "HikariCP" % "5.1.0",

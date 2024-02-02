@@ -1,3 +1,3 @@
 object Dependencies {
-  val SpringBoot = "2.7.18"
+  val SpringBoot = "2.3.12.RELEASE"
 }
