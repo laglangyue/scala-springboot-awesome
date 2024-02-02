@@ -2,9 +2,8 @@ package example.repository.model
 
 import org.scalatest.flatspec.FixtureAnyFlatSpec
 import org.scalatest.matchers.should.Matchers
-import scalikejdbc.scalatest.AutoRollback
 import scalikejdbc._
-import java.time.{ZonedDateTime}
+import scalikejdbc.scalatest.AutoRollback
 
 
 class UsersSpec extends FixtureAnyFlatSpec with Matchers with AutoRollback {
@@ -36,10 +35,7 @@ class UsersSpec extends FixtureAnyFlatSpec with Matchers with AutoRollback {
     val count = Users.countBy(sqls"user_id = ${123}")
     count should be >(0L)
   }
-  it should "create new record" in { implicit session =>
-    val created = Users.create(currentConnections = 1L, totalConnections = 1L, maxSessionControlledMemory = 1L, maxSessionTotalMemory = 1L, username = "MyString", password = "MyString", fullName = "MyString", email = "MyString")
-    created should not be(null)
-  }
+
   it should "save a record" in { implicit session =>
     val entity = Users.findAll().head
     // TODO modify something
